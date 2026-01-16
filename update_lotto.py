@@ -18,6 +18,9 @@ def update():
     res_json = res.json()
     
     file_path = "lotto_data.json"
+
+    print("!!res_json")
+    print(res_json)
     
     # 기존 데이터 읽기
     if os.path.exists(file_path):
@@ -28,6 +31,10 @@ def update():
                 all_data = {}
     else:
         all_data = {}
+
+    print("!!all_data")
+    print(all_data)
+
 
     # 파일 저장
     with open(file_path, "w", encoding="utf-8") as f:
