@@ -8,7 +8,7 @@ def update():
     
     res = requests.get(url, headers=headers)
     res_json = res.json()
-    with open("lotto_result.json", "w", encoding="utf-8") as f:
+    with open("lotto_data.json", "w", encoding="utf-8") as f:
         json.dump(res_json, f, ensure_ascii=False, indent=4)
 
 
