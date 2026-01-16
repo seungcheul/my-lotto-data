@@ -1,0 +1,26 @@
+name: Lotto Auto Update
+on:
+  schedule:
+    - cron: '30 11 * * 6' # 한국 시간 매주 토요일 밤 8시 30분 (UTC 11:30)
+  workflow_dispatch: # 수동 실행 버튼
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Run Update
+        run: python update_lotto.py
+      - name: Push Changes
+        run: |
+          git config --global user.name "LottoBot"
+          git config --global user.email "bot@github.com"
+          git add lotto_data.json
+          git commit -m "update data" || exit 0
+          git push
