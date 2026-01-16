@@ -32,7 +32,7 @@ def update():
     # 파일 저장
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(all_data, f, ensure_ascii=False, indent=4)
-    print(f"✅ {current_round}회차 업데이트 성공!")
+    print(f"✅ 업데이트 성공!")
 
 
 
