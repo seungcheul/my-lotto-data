@@ -1,7 +1,7 @@
 name: Lotto Auto Update
 on:
   schedule:
-    - cron: '30 11 * * 6' # 한국 시간 매주 토요일 밤 8시 30분 (UTC 11:30)
+    - cron: '15 12 * * 6' # 한국 시간 매주 토요일 밤 8시 30분 (UTC 11:30)
   workflow_dispatch: # 수동 실행 버튼
 
 jobs:
